@@ -1,0 +1,25 @@
+# Architecture Selection: Digital Campus Library Reservation Gateway
+
+## Architectural Choice
+
+We chose **Layered Architecture** for the **Digital Campus Library Reservation Gateway** system.
+
+## Two Reasons for the Choice
+
+**1. Separation of Responsibilities:**
+The system contains different responsibilities such as ISBN catalog searching, reservation and FIFO queue management, automated hold notifications, and overdue-fine transaction tracking. Layered Architecture separates these responsibilities into presentation, business-logic, and data-access layers, making the system easier to maintain, test, and modify.
+
+**2. Suitability for a Centralized Library System:**
+The Digital Campus Library Reservation Gateway is a centralized university system with well-defined operations. Layered Architecture provides a simple and organized structure for handling student reservations, queue management, catalog information, notifications, and fine transactions without introducing the additional complexity of a distributed architecture.
+
+## Security Advantage
+
+Layered Architecture allows authentication and authorization to be handled before sensitive business and database operations are accessed. Role-based access can ensure that **Student Members** can access their permitted reservations and information, while **Head Librarians** can access authorized administrative functions and fine transaction records.
+
+## Performance Benefit
+
+The separation of catalog and reservation operations allows the system to optimize frequently used operations such as ISBN searches and book-availability queries. Data can be retrieved through dedicated data-access components and commonly requested catalog information can be cached, helping the system provide faster responses to users.
+
+## Conclusion
+
+Layered Architecture is appropriate for the Digital Campus Library Reservation Gateway because it provides clear separation of responsibilities, simplifies maintenance, supports secure access control, and provides opportunities for efficient data retrieval and performance optimization.
